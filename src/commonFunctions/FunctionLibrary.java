@@ -12,6 +12,7 @@ public class FunctionLibrary extends AppUtil {
 	public static boolean verifyLogin(String username,String password)
 	{
 		driver.get(config.getProperty("Url"));
+		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		driver.findElement(By.xpath(config.getProperty("ObjUser"))).sendKeys(username);
 		driver.findElement(By.xpath(config.getProperty("ObjPass"))).sendKeys(password);
